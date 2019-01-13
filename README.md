@@ -1,2 +1,1 @@
-# phd_projects
-PhD Projects
+# PhD Projects

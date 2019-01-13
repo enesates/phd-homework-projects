@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.16.1 -->
+<interface>
+  <object class="GtkWindow" id="window1">
+    <property name="width_request">870</property>
+    <property name="height_request">500</property>
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkFixed" id="fixed1">
+        <property name="width_request">870</property>
+        <property name="height_request">500</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkDrawingArea" id="drawingArea">
+            <property name="width_request">640</property>
+            <property name="height_request">480</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <signal name="button-press-event" handler="button_press_event" swapped="no"/>
+	    <signal name="expose-event" handler="do_expose_event" swapped="no"/>
+            <signal name="key-press-event" handler="key_press_event" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">225</property>
+            <property name="y">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lblRadius">
+            <property name="width_request">100</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Radius:</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">123</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="txtRadius">
+            <property name="width_request">55</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">•</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+          </object>
+          <packing>
+            <property name="x">107</property>
+            <property name="y">123</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnSetRadius">
+            <property name="label" translatable="yes">S_ET</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">55</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Alt+E</property>
+            <property name="use_underline">True</property>
+            <signal name="clicked" handler="set_radius" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">165</property>
+            <property name="y">123</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lblSensorCount">
+            <property name="width_request">110</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="xalign">0.49000000953674316</property>
+            <property name="label" translatable="yes">Sensor Count:</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">255</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="txtSensorCount">
+            <property name="width_request">55</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">•</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+          </object>
+          <packing>
+            <property name="x">107</property>
+            <property name="y">255</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnRandom">
+            <property name="label" translatable="yes">_RANDOM DEPLOYMENT</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">215</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Alt+D</property>
+            <property name="use_underline">True</property>
+            <signal name="clicked" handler="deploy_random" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">350</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnSA">
+            <property name="label" translatable="yes">_SIMULATED ANNEALING</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">215</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Alt+M</property>
+            <property name="use_underline">True</property>
+            <signal name="clicked" handler="deploy_simulated_annealing" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">320</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnExit">
+            <property name="label" translatable="yes">E_XIT</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">215</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Alt+X</property>
+            <property name="use_underline">True</property>
+            <signal name="clicked" handler="exit" swapped="no"/>
+            <accelerator key="x" signal="activate" modifiers="GDK_MOD1_MASK"/>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">465</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lblPriority">
+            <property name="width_request">90</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Priority ():</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">225</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="txtPriority">
+            <property name="width_request">55</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">●</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+          </object>
+          <packing>
+            <property name="x">107</property>
+            <property name="y">225</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnSetPriority">
+            <property name="label" translatable="yes">S_ET</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">55</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Alt+T</property>
+            <property name="use_underline">True</property>
+            <property name="yalign">0.50999999046325684</property>
+            <signal name="clicked" handler="set_priority" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">165</property>
+            <property name="y">225</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFileChooserButton" id="fileImportImage">
+            <property name="width_request">215</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="file-set" handler="import_image" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnKMeans">
+            <property name="label" translatable="yes">_K-MEANS</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">107</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Alt+K</property>
+            <property name="use_underline">True</property>
+            <signal name="clicked" handler="run_kmeans" swapped="no"/>
+            <accelerator key="k" signal="activate" modifiers="GDK_MOD1_MASK"/>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">185</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnFCMeans">
+            <property name="label" translatable="yes">_FUZZY-C-MEANS</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">107</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Alt+K</property>
+            <property name="use_underline">True</property>
+            <signal name="clicked" handler="run_fcmeans" swapped="no"/>
+            <accelerator key="k" signal="activate" modifiers="GDK_MOD1_MASK"/>
+          </object>
+          <packing>
+            <property name="x">112</property>
+            <property name="y">185</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lblClusterCount">
+            <property name="width_request">110</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Cluster Count:</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">153</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="txtClusterCount">
+            <property name="width_request">55</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">•</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+          </object>
+          <packing>
+            <property name="x">107</property>
+            <property name="y">153</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="txtLocationSearch">
+            <property name="width_request">215</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">●</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">55</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lblLocationSearch">
+            <property name="width_request">215</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="yalign">0.43999999761581421</property>
+            <property name="label" translatable="yes">Location or Coordinate:
+</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">37</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnLocationSearch">
+            <property name="label" translatable="yes">Se_arch</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">87</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Alt+A</property>
+            <property name="use_underline">True</property>
+            <signal name="clicked" handler="search_location" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">135</property>
+            <property name="y">87</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lblZoomLevel">
+            <property name="width_request">80</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Zoom Level:</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">87</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="txtZoomLevel">
+            <property name="width_request">40</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">●</property>
+            <property name="text" translatable="yes">15</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+          </object>
+          <packing>
+            <property name="x">90</property>
+            <property name="y">87</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnSaveImage">
+            <property name="label">Save Image</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">85</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Alt+S</property>
+            <signal name="clicked" handler="toggle_save_image" swapped="no"/>
+            <accelerator key="s" signal="activate" modifiers="GDK_MOD1_MASK"/>
+          </object>
+          <packing>
+            <property name="x">135</property>
+            <property name="y">430</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="txtSaveImage">
+            <property name="width_request">130</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">●</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">430</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnClearDeployment">
+            <property name="label" translatable="yes">_Clear Deployment</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">120</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Alt+R</property>
+            <property name="use_underline">True</property>
+            <signal name="clicked" handler="clear_deployment" swapped="no"/>
+            <accelerator key="r" signal="activate" modifiers="GDK_MOD1_MASK"/>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">390</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHSeparator" id="hseparator1">
+            <property name="width_request">230</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="y">105</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHSeparator" id="hseparator2">
+            <property name="width_request">230</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="y">205</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHSeparator" id="hseparator3">
+            <property name="width_request">230</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="y">370</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkVSeparator" id="vseparator1">
+            <property name="width_request">100</property>
+            <property name="height_request">500</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">174</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnClearAllArea">
+            <property name="label" translatable="yes">_Clear All Area</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">95</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Alt+R</property>
+            <property name="use_underline">True</property>
+            <signal name="clicked" handler="clear_all_area" swapped="no"/>
+            <accelerator key="r" signal="activate" modifiers="GDK_MOD1_MASK"/>
+          </object>
+          <packing>
+            <property name="x">125</property>
+            <property name="y">390</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHSeparator" id="hseparator4">
+            <property name="width_request">230</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="y">410</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="observeDeploymentCheck">
+            <property name="label" translatable="yes">Observe Deployment</property>
+            <property name="width_request">215</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="xalign">0</property>
+            <property name="image_position">top</property>
+            <property name="draw_indicator">True</property>
+	    <signal name="toggled" handler="toggle_observe" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">290</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHSeparator" id="hseparator5">
+            <property name="width_request">230</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="y">275</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
